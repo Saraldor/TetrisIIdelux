@@ -11,6 +11,13 @@ public class Board extends JPanel {
     private Timer looper;
    private Color [][] board = new  Color[BOARD_WIDTH][BOARD_HEIGHT];
 
+    private Color [][] shape = new Color[3][3];
+
+
+
+
+
+
     public Board(){
         looper = new Timer(500, new ActionListener() {
 int n = 0;
@@ -39,7 +46,12 @@ g.fillRect(0,0,getWidth(),getHeight());
             g.drawLine(col*BLOCK_SIZE,0,col*BLOCK_SIZE,BLOCK_SIZE* BOARD_HEIGHT  );
         }
 
-
+for (int i = 0; i < shape.length; i++){
+    for (int j = 0; j< shape[0].length; j++) {
+      g.setColor(Color.cyan);
+      g.fillRect(i*BLOCK_SIZE,j*BLOCK_SIZE,BLOCK_SIZE,BLOCK_SIZE);
+    }
+}
 
 
     }
